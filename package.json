@@ -5,7 +5,9 @@
   "main": "app.ts",
   "scripts": {
     "dev": "nodemon app.ts",
-    "build": "npx tsc",
+    "migrate": "npx prisma migrate deploy",
+    "generate": "npx prisma generate",
+    "build": "npm run migrate && npm run generate && npx tsc",
     "start": "node dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
